@@ -18,20 +18,17 @@ namespace Win.Apps.CS.Calc
             RegressiveNum = 7,
             SquareNumber = 8,
 			Factorial = 9,
-			nLogarithm = 10,
+			CubicRoot = 10,
 			bLogarithm = 11
 		}
 
 		/// <summary>
 		/// Статические переменные:
 		/// extent - перевенная квадрата
-		/// regresNum - переменная обратного числа
 		/// peremennayaMinus - переменная для изменения числа в положительное или отрицательное
 		/// </summary>
 		#region Constants
 		private static double peremennayaMinus = -1;
-		private const byte regresNum = 1;
-        private const byte extent = 2;
 		#endregion
 
 
@@ -148,12 +145,12 @@ namespace Win.Apps.CS.Calc
                     break;
 
                 case Deystvie.RegressiveNum:
-                    resultatVichisleniy = regresNum / pervoeChislo;
+                    resultatVichisleniy = MathemExpress.RegresNum(pervoeChislo);
                     proverkaOshibok = true;
                     break;
 
                 case Deystvie.SquareNumber:
-                    resultatVichisleniy = Math.Pow(pervoeChislo, extent);
+                    resultatVichisleniy = MathemExpress.SquareNumber(pervoeChislo);
                     proverkaOshibok = true;
                     break;
 
@@ -162,8 +159,8 @@ namespace Win.Apps.CS.Calc
 					proverkaOshibok = true;
 					break;
 
-				case Deystvie.nLogarithm:
-					resultatVichisleniy = Math.Log(pervoeChislo);
+				case Deystvie.CubicRoot:
+					resultatVichisleniy = MathemExpress.CubicRoot(pervoeChislo);
 					proverkaOshibok = true;
 					break;
 
@@ -195,22 +192,22 @@ namespace Win.Apps.CS.Calc
 						break;
 
 					case Deystvie.Slojenie:
-						resultatVichisleniy = pervoeChislo + vtoroeChislo;
+						resultatVichisleniy = MathemExpress.Sum(pervoeChislo, vtoroeChislo);
 						proverkaOshibok = true;
 						break;
 
 					case Deystvie.Vichitanie:
-						resultatVichisleniy = pervoeChislo - vtoroeChislo;
+						resultatVichisleniy = MathemExpress.Subtraction(pervoeChislo, vtoroeChislo);
 						proverkaOshibok = true;
 						break;
 
 					case Deystvie.Umnojenie:
-						resultatVichisleniy = pervoeChislo * vtoroeChislo;
+						resultatVichisleniy = MathemExpress.Multiplication(pervoeChislo, vtoroeChislo);
 						proverkaOshibok = true;
 						break;
 
 					case Deystvie.Delenie:
-						resultatVichisleniy = pervoeChislo / vtoroeChislo;
+						resultatVichisleniy = MathemExpress.Division(pervoeChislo, vtoroeChislo);
 						proverkaOshibok = true;
 						break;
 

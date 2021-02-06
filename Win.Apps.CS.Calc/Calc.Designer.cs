@@ -56,12 +56,20 @@ namespace Win.Apps.CS.Calc
             this.inquiry = new System.Windows.Forms.ToolTip(this.components);
             this.btn_log = new System.Windows.Forms.Button();
             this.btn_fact = new System.Windows.Forms.Button();
-            this.btn_ln = new System.Windows.Forms.Button();
+            this.btn_CubRoot = new System.Windows.Forms.Button();
+            this.btn_minusReg = new System.Windows.Forms.Button();
+            this.btn_umnojenieReg = new System.Windows.Forms.Button();
+            this.btn_delenieReg = new System.Windows.Forms.Button();
+            this.btn_plusReg = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.vievMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.normViewMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.engineeringMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EngineeringСalcBox = new System.Windows.Forms.GroupBox();
+            this.RegularСalcBox = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
+            this.EngineeringСalcBox.SuspendLayout();
+            this.RegularСalcBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn7
@@ -216,7 +224,7 @@ namespace Win.Apps.CS.Calc
             // 
             this.btn_umnojenie.AccessibleName = "multiply";
             this.btn_umnojenie.BackColor = System.Drawing.Color.Khaki;
-            this.btn_umnojenie.Location = new System.Drawing.Point(185, 86);
+            this.btn_umnojenie.Location = new System.Drawing.Point(40, 5);
             this.btn_umnojenie.Name = "btn_umnojenie";
             this.btn_umnojenie.Size = new System.Drawing.Size(40, 25);
             this.btn_umnojenie.TabIndex = 3;
@@ -229,7 +237,7 @@ namespace Win.Apps.CS.Calc
             // 
             this.btn_plus.AccessibleName = "plus";
             this.btn_plus.BackColor = System.Drawing.Color.Khaki;
-            this.btn_plus.Location = new System.Drawing.Point(145, 114);
+            this.btn_plus.Location = new System.Drawing.Point(0, 33);
             this.btn_plus.Name = "btn_plus";
             this.btn_plus.Size = new System.Drawing.Size(40, 25);
             this.btn_plus.TabIndex = 3;
@@ -242,7 +250,7 @@ namespace Win.Apps.CS.Calc
             // 
             this.btn_delenie.AccessibleName = "divide";
             this.btn_delenie.BackColor = System.Drawing.Color.Khaki;
-            this.btn_delenie.Location = new System.Drawing.Point(145, 86);
+            this.btn_delenie.Location = new System.Drawing.Point(0, 5);
             this.btn_delenie.Name = "btn_delenie";
             this.btn_delenie.Size = new System.Drawing.Size(40, 25);
             this.btn_delenie.TabIndex = 3;
@@ -255,7 +263,7 @@ namespace Win.Apps.CS.Calc
             // 
             this.btn_minus.AccessibleName = "minus";
             this.btn_minus.BackColor = System.Drawing.Color.Khaki;
-            this.btn_minus.Location = new System.Drawing.Point(185, 114);
+            this.btn_minus.Location = new System.Drawing.Point(40, 33);
             this.btn_minus.Name = "btn_minus";
             this.btn_minus.Size = new System.Drawing.Size(40, 25);
             this.btn_minus.TabIndex = 3;
@@ -294,7 +302,7 @@ namespace Win.Apps.CS.Calc
             // 
             this.btn_regressiveNum.AccessibleName = "";
             this.btn_regressiveNum.BackColor = System.Drawing.Color.Khaki;
-            this.btn_regressiveNum.Location = new System.Drawing.Point(145, 166);
+            this.btn_regressiveNum.Location = new System.Drawing.Point(0, 60);
             this.btn_regressiveNum.Name = "btn_regressiveNum";
             this.btn_regressiveNum.Size = new System.Drawing.Size(40, 25);
             this.btn_regressiveNum.TabIndex = 3;
@@ -307,7 +315,7 @@ namespace Win.Apps.CS.Calc
             // 
             this.btn_squareNum.AccessibleName = "";
             this.btn_squareNum.BackColor = System.Drawing.Color.Khaki;
-            this.btn_squareNum.Location = new System.Drawing.Point(185, 166);
+            this.btn_squareNum.Location = new System.Drawing.Point(40, 85);
             this.btn_squareNum.Name = "btn_squareNum";
             this.btn_squareNum.Size = new System.Drawing.Size(40, 25);
             this.btn_squareNum.TabIndex = 3;
@@ -320,7 +328,7 @@ namespace Win.Apps.CS.Calc
             // 
             this.btn_squareRoot.AccessibleName = "";
             this.btn_squareRoot.BackColor = System.Drawing.Color.Khaki;
-            this.btn_squareRoot.Location = new System.Drawing.Point(185, 141);
+            this.btn_squareRoot.Location = new System.Drawing.Point(40, 60);
             this.btn_squareRoot.Name = "btn_squareRoot";
             this.btn_squareRoot.Size = new System.Drawing.Size(40, 25);
             this.btn_squareRoot.TabIndex = 3;
@@ -333,7 +341,7 @@ namespace Win.Apps.CS.Calc
             // 
             this.btn_exponentiation.AccessibleName = "";
             this.btn_exponentiation.BackColor = System.Drawing.Color.Khaki;
-            this.btn_exponentiation.Location = new System.Drawing.Point(145, 141);
+            this.btn_exponentiation.Location = new System.Drawing.Point(0, 85);
             this.btn_exponentiation.Name = "btn_exponentiation";
             this.btn_exponentiation.Size = new System.Drawing.Size(40, 25);
             this.btn_exponentiation.TabIndex = 3;
@@ -346,43 +354,92 @@ namespace Win.Apps.CS.Calc
             // 
             this.btn_log.AccessibleName = "";
             this.btn_log.BackColor = System.Drawing.Color.Khaki;
-            this.btn_log.Location = new System.Drawing.Point(145, 194);
+            this.btn_log.Location = new System.Drawing.Point(0, 113);
             this.btn_log.Name = "btn_log";
             this.btn_log.Size = new System.Drawing.Size(80, 25);
             this.btn_log.TabIndex = 3;
-            this.btn_log.Text = "Logₓy";
-            this.inquiry.SetToolTip(this.btn_log, "Логарифм Y при основании X");
+            this.btn_log.Text = "Logₓn";
+            this.inquiry.SetToolTip(this.btn_log, "Логарифм \'n\' при основании \'x\'");
             this.btn_log.UseVisualStyleBackColor = false;
-            this.btn_log.Visible = false;
             this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
             // 
             // btn_fact
             // 
             this.btn_fact.AccessibleName = "";
             this.btn_fact.BackColor = System.Drawing.Color.Khaki;
-            this.btn_fact.Location = new System.Drawing.Point(185, 221);
+            this.btn_fact.Location = new System.Drawing.Point(40, 140);
             this.btn_fact.Name = "btn_fact";
             this.btn_fact.Size = new System.Drawing.Size(40, 25);
             this.btn_fact.TabIndex = 3;
             this.btn_fact.Text = "Fact";
             this.inquiry.SetToolTip(this.btn_fact, "Факториал");
             this.btn_fact.UseVisualStyleBackColor = false;
-            this.btn_fact.Visible = false;
             this.btn_fact.Click += new System.EventHandler(this.btn_fact_Click);
             // 
-            // btn_ln
+            // btn_CubRoot
             // 
-            this.btn_ln.AccessibleName = "";
-            this.btn_ln.BackColor = System.Drawing.Color.Khaki;
-            this.btn_ln.Location = new System.Drawing.Point(145, 221);
-            this.btn_ln.Name = "btn_ln";
-            this.btn_ln.Size = new System.Drawing.Size(40, 25);
-            this.btn_ln.TabIndex = 3;
-            this.btn_ln.Text = "Ln";
-            this.inquiry.SetToolTip(this.btn_ln, "Натуральный логорифм");
-            this.btn_ln.UseVisualStyleBackColor = false;
-            this.btn_ln.Visible = false;
-            this.btn_ln.Click += new System.EventHandler(this.btn_ln_Click);
+            this.btn_CubRoot.AccessibleName = "";
+            this.btn_CubRoot.BackColor = System.Drawing.Color.Khaki;
+            this.btn_CubRoot.Location = new System.Drawing.Point(0, 140);
+            this.btn_CubRoot.Name = "btn_CubRoot";
+            this.btn_CubRoot.Size = new System.Drawing.Size(40, 25);
+            this.btn_CubRoot.TabIndex = 3;
+            this.btn_CubRoot.Text = "∛";
+            this.inquiry.SetToolTip(this.btn_CubRoot, "Кубический корень");
+            this.btn_CubRoot.UseVisualStyleBackColor = false;
+            this.btn_CubRoot.Click += new System.EventHandler(this.btn_CubRoot_Click);
+            // 
+            // btn_minusReg
+            // 
+            this.btn_minusReg.AccessibleName = "minus";
+            this.btn_minusReg.BackColor = System.Drawing.Color.Khaki;
+            this.btn_minusReg.Location = new System.Drawing.Point(40, 44);
+            this.btn_minusReg.Name = "btn_minusReg";
+            this.btn_minusReg.Size = new System.Drawing.Size(40, 40);
+            this.btn_minusReg.TabIndex = 3;
+            this.btn_minusReg.Text = "-";
+            this.inquiry.SetToolTip(this.btn_minusReg, "Вычетание");
+            this.btn_minusReg.UseVisualStyleBackColor = false;
+            this.btn_minusReg.Click += new System.EventHandler(this.btn_minus_Click);
+            // 
+            // btn_umnojenieReg
+            // 
+            this.btn_umnojenieReg.AccessibleName = "multiply";
+            this.btn_umnojenieReg.BackColor = System.Drawing.Color.Khaki;
+            this.btn_umnojenieReg.Location = new System.Drawing.Point(40, 5);
+            this.btn_umnojenieReg.Name = "btn_umnojenieReg";
+            this.btn_umnojenieReg.Size = new System.Drawing.Size(40, 40);
+            this.btn_umnojenieReg.TabIndex = 3;
+            this.btn_umnojenieReg.Text = "*";
+            this.inquiry.SetToolTip(this.btn_umnojenieReg, "Умножение");
+            this.btn_umnojenieReg.UseVisualStyleBackColor = false;
+            this.btn_umnojenieReg.Click += new System.EventHandler(this.btn_umnojenie_Click);
+            // 
+            // btn_delenieReg
+            // 
+            this.btn_delenieReg.AccessibleName = "divide";
+            this.btn_delenieReg.BackColor = System.Drawing.Color.Khaki;
+            this.btn_delenieReg.Location = new System.Drawing.Point(0, 5);
+            this.btn_delenieReg.Name = "btn_delenieReg";
+            this.btn_delenieReg.Size = new System.Drawing.Size(40, 40);
+            this.btn_delenieReg.TabIndex = 3;
+            this.btn_delenieReg.Text = "/";
+            this.inquiry.SetToolTip(this.btn_delenieReg, "Деление");
+            this.btn_delenieReg.UseVisualStyleBackColor = false;
+            this.btn_delenieReg.Click += new System.EventHandler(this.btn_delenie_Click);
+            // 
+            // btn_plusReg
+            // 
+            this.btn_plusReg.AccessibleName = "plus";
+            this.btn_plusReg.BackColor = System.Drawing.Color.Khaki;
+            this.btn_plusReg.Location = new System.Drawing.Point(0, 44);
+            this.btn_plusReg.Name = "btn_plusReg";
+            this.btn_plusReg.Size = new System.Drawing.Size(40, 40);
+            this.btn_plusReg.TabIndex = 3;
+            this.btn_plusReg.Text = "+";
+            this.inquiry.SetToolTip(this.btn_plusReg, "Сложение");
+            this.btn_plusReg.UseVisualStyleBackColor = false;
+            this.btn_plusReg.Click += new System.EventHandler(this.btn_plus_Click);
             // 
             // menuStrip1
             // 
@@ -417,28 +474,53 @@ namespace Win.Apps.CS.Calc
             this.engineeringMenuItem.Text = "Инжененерный";
             this.engineeringMenuItem.Click += new System.EventHandler(this.engineeringMenuItem_Click);
             // 
+            // EngineeringСalcBox
+            // 
+            this.EngineeringСalcBox.Controls.Add(this.btn_delenie);
+            this.EngineeringСalcBox.Controls.Add(this.btn_plus);
+            this.EngineeringСalcBox.Controls.Add(this.btn_squareRoot);
+            this.EngineeringСalcBox.Controls.Add(this.btn_umnojenie);
+            this.EngineeringСalcBox.Controls.Add(this.btn_regressiveNum);
+            this.EngineeringСalcBox.Controls.Add(this.btn_log);
+            this.EngineeringСalcBox.Controls.Add(this.btn_CubRoot);
+            this.EngineeringСalcBox.Controls.Add(this.btn_exponentiation);
+            this.EngineeringСalcBox.Controls.Add(this.btn_minus);
+            this.EngineeringСalcBox.Controls.Add(this.btn_squareNum);
+            this.EngineeringСalcBox.Controls.Add(this.btn_fact);
+            this.EngineeringСalcBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.EngineeringСalcBox.Location = new System.Drawing.Point(143, 81);
+            this.EngineeringСalcBox.Name = "EngineeringСalcBox";
+            this.EngineeringСalcBox.Size = new System.Drawing.Size(80, 165);
+            this.EngineeringСalcBox.TabIndex = 8;
+            this.EngineeringСalcBox.TabStop = false;
+            this.EngineeringСalcBox.Visible = false;
+            // 
+            // RegularСalcBox
+            // 
+            this.RegularСalcBox.Controls.Add(this.btn_plusReg);
+            this.RegularСalcBox.Controls.Add(this.btn_delenieReg);
+            this.RegularСalcBox.Controls.Add(this.btn_umnojenieReg);
+            this.RegularСalcBox.Controls.Add(this.btn_minusReg);
+            this.RegularСalcBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.RegularСalcBox.Location = new System.Drawing.Point(143, 81);
+            this.RegularСalcBox.Name = "RegularСalcBox";
+            this.RegularСalcBox.Size = new System.Drawing.Size(80, 85);
+            this.RegularСalcBox.TabIndex = 7;
+            this.RegularСalcBox.TabStop = false;
+            // 
             // Calc
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.EngineeringСalcBox);
+            this.Controls.Add(this.RegularСalcBox);
             this.Controls.Add(this.btn_ravno);
             this.Controls.Add(this.btn_sbros);
-            this.Controls.Add(this.btn_fact);
-            this.Controls.Add(this.btn_squareNum);
-            this.Controls.Add(this.btn_minus);
             this.Controls.Add(this.btn3);
-            this.Controls.Add(this.btn_exponentiation);
-            this.Controls.Add(this.btn_delenie);
-            this.Controls.Add(this.btn_ln);
-            this.Controls.Add(this.btn_log);
             this.Controls.Add(this.bnt9);
-            this.Controls.Add(this.btn_regressiveNum);
             this.Controls.Add(this.btnChangesign);
-            this.Controls.Add(this.btn_plus);
-            this.Controls.Add(this.btn_squareRoot);
             this.Controls.Add(this.btn5);
-            this.Controls.Add(this.btn_umnojenie);
             this.Controls.Add(this.btnpoint);
             this.Controls.Add(this.btn6);
             this.Controls.Add(this.btn2);
@@ -459,6 +541,8 @@ namespace Win.Apps.CS.Calc
             this.TopMost = true;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.EngineeringСalcBox.ResumeLayout(false);
+            this.RegularСalcBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,7 +580,13 @@ namespace Win.Apps.CS.Calc
         private System.Windows.Forms.ToolStripMenuItem engineeringMenuItem;
         private System.Windows.Forms.Button btn_log;
         private System.Windows.Forms.Button btn_fact;
-        private System.Windows.Forms.Button btn_ln;
+        private System.Windows.Forms.Button btn_CubRoot;
+        private System.Windows.Forms.GroupBox EngineeringСalcBox;
+        private System.Windows.Forms.Button btn_minusReg;
+        private System.Windows.Forms.Button btn_umnojenieReg;
+        private System.Windows.Forms.Button btn_delenieReg;
+        private System.Windows.Forms.Button btn_plusReg;
+        private System.Windows.Forms.GroupBox RegularСalcBox;
     }
 }
 

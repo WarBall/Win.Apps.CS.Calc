@@ -159,31 +159,23 @@ namespace Win.Apps.CS.Calc
             mehanizmcalkulyatora.Sbros();
         }
 
-        private void btn_ln_Click(object sender, EventArgs e)
+        private void btn_CubRoot_Click(object sender, EventArgs e)
         {
-            mehanizmcalkulyatora.DeystvieCalculatora(mehanizmcalkulyatora.Deystvie.nLogarithm);
+            mehanizmcalkulyatora.DeystvieCalculatora(mehanizmcalkulyatora.Deystvie.CubicRoot);
             txtOutput.Text = mehanizmcalkulyatora.SinglePressing();
             mehanizmcalkulyatora.Sbros();
         }
 
         private void engineeringMenuItem_Click(object sender, EventArgs e)
         {
-            // btn_log 
-            btn_log.Visible = true;
-            // btn_fact 
-            btn_fact.Visible = true;
-            // btn_ln 
-            btn_ln.Visible = true;
+            EngineeringСalcBox.Visible = true;
+            RegularСalcBox.Visible = false;
         }
 
         private void normViewMenuItem_Click(object sender, EventArgs e)
         {
-            // btn_log 
-            btn_log.Visible = false;
-            // btn_fact 
-            btn_fact.Visible = false;
-            // btn_ln 
-            btn_ln.Visible = false;
+            EngineeringСalcBox.Visible = false;
+            RegularСalcBox.Visible = true;
         }
     }
 }
