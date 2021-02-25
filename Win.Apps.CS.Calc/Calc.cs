@@ -149,7 +149,8 @@ namespace Win.Apps.CS.Calc
 
         private void btn_log_Click(object sender, EventArgs e)
         {
-            mehanizmcalkulyatora.DeystvieCalculatora(mehanizmcalkulyatora.Deystvie.bLogarithm);           
+            SquareEquationForm sef = new SquareEquationForm();
+            sef.Show();           
         }
 
         private void btn_fact_Click(object sender, EventArgs e)

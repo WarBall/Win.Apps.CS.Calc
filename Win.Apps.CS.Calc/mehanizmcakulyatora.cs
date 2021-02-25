@@ -19,7 +19,7 @@ namespace Win.Apps.CS.Calc
             SquareNumber = 8,
 			Factorial = 9,
 			CubicRoot = 10,
-			bLogarithm = 11
+			SquareEquation = 11
 		}
 
 		/// <summary>
@@ -215,11 +215,6 @@ namespace Win.Apps.CS.Calc
                         resultatVichisleniy = Math.Pow(pervoeChislo, vtoroeChislo);
                         proverkaOshibok = true;
                         break;
-
-					case Deystvie.bLogarithm:
-						resultatVichisleniy = Math.Log(pervoeChislo, vtoroeChislo);
-						proverkaOshibok = true;
-						break;
 
 					default:
 						proverkaOshibok = false;

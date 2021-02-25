@@ -358,7 +358,7 @@ namespace Win.Apps.CS.Calc
             this.btn_log.Name = "btn_log";
             this.btn_log.Size = new System.Drawing.Size(80, 25);
             this.btn_log.TabIndex = 3;
-            this.btn_log.Text = "Logₓn";
+            this.btn_log.Text = "Ax²+Bx+C=0";
             this.inquiry.SetToolTip(this.btn_log, "Логарифм \'n\' при основании \'x\'");
             this.btn_log.UseVisualStyleBackColor = false;
             this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
